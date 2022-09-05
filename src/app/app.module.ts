@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { PersonModule } from './person/person.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
