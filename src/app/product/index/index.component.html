@@ -1,0 +1,49 @@
+<section>
+  <div class="d-flex justify-content-between">
+    <h4>List products</h4>
+    <a routerLink="/product/create" class="btn btn-success"
+      >Create New Product</a
+    >
+  </div>
+
+  <br />
+
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Weight</th>
+      <th>Storage</th>
+      <th>Destination</th>
+      <th>Status</th>
+      <th width="220px">Action</th>
+    </tr>
+    <tr *ngFor="let product of prods">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.weight }}</td>
+      <td>{{ product.storage_id }}</td>
+      <td>{{ product.destination }}</td>
+      <td>{{ product.status }}</td>
+      <td>
+        <a
+          href="#"
+          [routerLink]="['/product/', 'edit', product.id]"
+          class="btn btn-primary"
+          >Edit</a
+        >
+        <button
+          type="button"
+          (click)="deleteProduct(product.id)"
+          class="btn btn-danger"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </table>
+</section>
